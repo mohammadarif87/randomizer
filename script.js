@@ -5,11 +5,12 @@ const colors = [
     { hex: '#3357FF', name: 'Blue' },
     { hex: '#F3FF33', name: 'Yellow' },
     { hex: '#FF33F3', name: 'Pink' },
-    { hex: '#33FFF3', name: 'Cyan' },
+    { hex: '#33FFF3', name: 'Light Blue' },
     { hex: '#F333FF', name: 'Purple' },
     { hex: '#FF8333', name: 'Orange' },
     { hex: '#33FF83', name: 'Light Green' },
-    { hex: '#8333FF', name: 'Violet' }
+    { hex: '#000000', name: 'Black' },
+    { hex: '#FFFFFF', name: 'White' }
 ];
 
 // DOM elements
