@@ -8,8 +8,56 @@
 </head>
 <body>
     <div class="container">
+        <div class="datetime-container">
+            <div class="date" id="currentDate"></div>
+            <div class="time" id="currentTime"></div>
+        </div>
         <h1>Randomizer</h1>
+        
+        <div class="user-info">
+            <div class="input-group">
+                <label for="userName">Name: <span class="required">*</span></label>
+                <input type="text" id="userName" placeholder="Enter your name (max 24 characters)" maxlength="24" required>
+            </div>
+            <div class="input-group">
+                <label for="userTeam">Team: <span class="required">*</span></label>
+                <input type="text" id="userTeam" placeholder="Enter your team (max 24 characters)" maxlength="24" required>
+            </div>
+        </div>
+
         <div class="randomizer-box">
+            <div class="settings">
+                <div class="setting-group">
+                    <label for="maxNumber">Maximum Number (1-999):</label>
+                    <div class="number-input-group">
+                        <input type="number" id="maxNumber" min="1" max="999" value="10">
+                        <input type="range" id="maxNumberSlider" min="1" max="999" value="10">
+                    </div>
+                    <div id="numberError" class="error-message"></div>
+                </div>
+
+                <div class="setting-group">
+                    <div class="color-toggle">
+                        <input type="checkbox" id="enableColor">
+                        <label for="enableColor">Enable Color Randomization</label>
+                    </div>
+                    <select id="colorSelect" disabled>
+                        <option value="random">Random Color</option>
+                        <option value="#FF5733">Red</option>
+                        <option value="#33FF57">Green</option>
+                        <option value="#3357FF">Blue</option>
+                        <option value="#F3FF33">Yellow</option>
+                        <option value="#FF33F3">Pink</option>
+                        <option value="#33FFF3">Light Blue</option>
+                        <option value="#F333FF">Purple</option>
+                        <option value="#FF8333">Orange</option>
+                        <option value="#33FF83">Light Green</option>
+                        <option value="#000000">Black</option>
+                        <option value="#FFFFFF">White</option>
+                    </select>
+                </div>
+            </div>
+
             <div class="result" id="result">
                 <div class="number" id="randomNumber">-</div>
                 <div class="color-display">
@@ -19,11 +67,16 @@
             </div>
             <button id="randomizeBtn">Randomize!</button>
         </div>
+
         <div class="history">
-            <h2>History</h2>
+            <div class="history-header">
+                <h2>History</h2>
+                <button id="exportBtn" class="export-btn">Export to PDF</button>
+            </div>
             <div id="historyList" class="history-list"></div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html> 
